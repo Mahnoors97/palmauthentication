@@ -1,5 +1,5 @@
 click==6.7
-Cython==0.28.2
+Cython==0.27.2
 cytoolz==0.9.0.1
 Flask==1.0.2
 Flask-Cors==3.0.4
@@ -8,6 +8,9 @@ Keras==2.2.4
 Keras-Applications==1.0.6
 Keras-Preprocessing==1.0.5
 tensorflow==1.14.0
+scikit-image==0.13.1
+numpy==1.14.3
 scikit-learn==0.19.1
 scipy==1.1.0
 matplotlib==2.2.2
+pandas==0.23.0
