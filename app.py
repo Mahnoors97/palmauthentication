@@ -1,3 +1,5 @@
+from flask import Flask
+from flask import request
 import  json
 from keras.applications.mobilenet import MobileNet, preprocess_input
 from keras.preprocessing import image
@@ -6,6 +8,7 @@ from keras.layers import Input
 import pickle
 import os
 import numpy as np
+
 
 dir_path=""
 
@@ -52,15 +55,13 @@ def predict_label(x):
     return train_labels[preds[0]]
 
 
-from flask import Flask
-from flask import request
-
 app = Flask(__name__)
 
 @app.route('/')
 def index():
     
-    return "Welcome to Contact Less PALM Authentication"
+    return "<h1>Welcome to Contact Less PALM Authentication</h1>"
+	
 
 @app.route('/authenticate',methods = ['POST', 'GET'])
 def authenticate():
@@ -92,3 +93,8 @@ def authenticateURL():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',debug=True)
+
+	
+	
+if __name__ == '__main__':
+    app.run()
