@@ -8,7 +8,7 @@ import os
 import numpy as np
 from globals  import compute_balance_after
 
-dir_path="cpas/"
+dir_path="/"
 
 with open(dir_path+'conf.json') as f:    
     config = json.load(f)
