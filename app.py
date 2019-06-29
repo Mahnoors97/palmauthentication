@@ -54,7 +54,8 @@ def predict_label(x):
     #print(flat.shape)
     flat = np.expand_dims(flat, axis=0)
     #print(flat.shape)
-    preds = app.classifier.predict(flat)
+    classifier = pickle.load(open(classifier_path, 'rb'))
+    preds = classifier.predict(flat)
     #print(preds)
     print(preds[0])
     prediction 	= user_labels[preds[0]]
@@ -73,7 +74,6 @@ def load_model_to_app():
     
     model_new=create_model()
     model_new.load_weights(dir_path+model_path+"0.1.h5")
-    app.classifier = pickle.load(open(classifier_path, 'rb'))
     app.model = model_new
         
     # Save the graph to the app framework.
