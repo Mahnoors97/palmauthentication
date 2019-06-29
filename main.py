@@ -6,11 +6,10 @@ from keras.layers import Input
 import pickle
 import os
 import numpy as np
-from globals  import compute_balance_after
 
-dir_path="/"
+dir_path=""
 
-with open(dir_path+'conf.json') as f:    
+with open(dir_path+'conf/conf.json') as f:    
     config = json.load(f)
 
 # config variables
@@ -31,6 +30,7 @@ def create_model():
    
     if model_name == "mobilenet":
       base_model = MobileNet(include_top=include_top, weights=weights, input_tensor=Input(shape=(224,224,3)), input_shape=(224,224,3))
+      base_model.summary()
       model = Model(input=base_model.input, output=base_model.get_layer('custom').output)
     else:
       base_model = None
