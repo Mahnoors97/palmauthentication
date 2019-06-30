@@ -108,7 +108,7 @@ def authenticate():
         predict=predict_label(x)
         os.remove(filename)
         print(predict)
-        return "I think it is a "+predict
+        return predict
     
 
 
