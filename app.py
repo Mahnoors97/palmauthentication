@@ -82,7 +82,7 @@ def load_model_to_app():
 @app.route('/')
 def index():
     
-    return "Welcome to Contact Less PALM Authentication"
+    return "Welcome to Contact Less PALMPRINT Authentication"
 
 @app.route('/authenticate',methods = ['POST', 'GET'])
 def authenticate():
