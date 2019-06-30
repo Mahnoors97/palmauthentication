@@ -116,7 +116,7 @@ def authenticate():
 def authenticateURL():
     image_name = request.args.get('image_name')
     print("Input image name "+image_name)
-    path = test_path + "/"+image_name
+    #path = test_path + "/"+image_name
     img= image.load_img(path, target_size=image_size)
     
     x = image.img_to_array(img)
